@@ -14,8 +14,19 @@ git branch
 git checkout master #切换要合的分支
 git merge xym #将xym分支合并
 
-git branch dev                                    #创建分支
-git checkout dev                                 #切换分支
-git pull origin master                          #拉代码
-git push --set-upstream origin dev     #创建远程分支，提交代码
+########### 实例操作
+ #创建分支
+git branch dev
+#切换分支
+git checkout dev
+ #拉代码
+git pull origin master
+ #创建远程分支，提交代码
+git push --set-upstream origin dev
 
+#切换主分支
+git checkout master
+#将dev合并到master
+git merge dev
+#将主分支提交上去
+git push --set-upstream origin master
