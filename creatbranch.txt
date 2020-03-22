@@ -14,7 +14,7 @@ git branch
 git checkout master #切换要合的分支
 git merge xym #将xym分支合并
 
-########### 实例操作
+########### 实例操作123
  #创建分支
 git branch dev
 #切换分支
