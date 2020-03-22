@@ -7,12 +7,42 @@ git config --global user.mail "用户邮箱"
 #新建目录做临时仓库，将新建文件托进gitbash editor view，生成路径：
 cd /d/TOOLS/project1
 
-#设置该文件为仓库
+##设置该文件为仓库
 git init
 
 git log #修改日志
 
 git log --pretty=oneline #只显示版本号+提交备注
+
+git reset --hard^ #回退上一版本
+git reset --hard~100 #回退上100版本
+git reset --hard 版本号部分识别信息  #回退只定版本
+
+git reflog #提交记录
+git reset --hard reflog版本号  #回退到指定提交版本
+
+##远程仓库--配置秘钥
+ ssh-keygen -t rsa -C "hubiao1991@hotmail.com"
+一直回车
+
+进入(/c/Users/10039/.ssh/id_rsa)目录
+cd /c/Users/10039/.ssh
+ls
+id_rsa.pub #公钥信息
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDDHhcJ7B5/VLTS/yemkFkWQJTwVoaDgsVwXufGwq4tQMmPgOnfDvLlboqpiRsWuEkO6TXKvJrNqzhO7WwDhKGSpfV6SPC2f4P1GtU0tZqdl2V/BmaVqUn9s0wQ3O9o4r9YGrmYnq8+GVK8nZ7aW4sa5jyEwNFcDBxWpUzArjuChSIRL6mKf92W813m/DQ7EyNCynyq9D/jsC0Sisn4EkwxlwRwklRM5UJToRxztLoyEWiM/TbceC24ZZm/jmFTSMVEii1Mw3jk121Xonn8WnkgFGF7Jlan+rA5cYiyXZojIvLKR+349YcRvqLtkvR3IHsQen7XO70eJDsvhB8sqLXti4FtmPG3+YWcGuEX4XSoZ47LM0qG3/ug1pgsBWzcS0JfjN0u18pBkpCMQxVKUTsEPR+E31vpwo257JWJhyoGteOv8aQsmoT+I2ikUT63bCkHBlkZjAamViB/nTZlzgv1cXPikfl/rrsf8wBb4Id1JDp34QmGOWu+CutPSJlCcJk= hubiao1991@hotmail.com
+
+登录GITHUB -> setting -> SSH and GPG keys -> new SSH key -> 添加公钥信息 
+
+##测试秘钥是否通过
+ssh -T git@github.com
+
+##创建远程仓库
+git remote add origin 远程仓库地址 #关联远程仓库
+git remote rm origin #删除关联
+#拉代码
+git pull origin master --allow-unrelated-histories
+#推上去
+git push origin master
 
 ####
 
