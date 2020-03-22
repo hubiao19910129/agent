@@ -1,0 +1,17 @@
+#绑定用户名
+git config --global user.name "用户名"
+
+#绑定邮箱
+git config --global user.mail "用户邮箱"
+
+#新建目录做临时仓库，将新建文件托进gitbash editor view，生成路径：
+cd /d/TOOLS/project1
+
+#设置该文件为仓库
+git init
+
+##
+
+
+
+
